@@ -1,6 +1,9 @@
-import './globals.css'
+import { Grid } from '@mui/material'
+import "bootstrap/dist/css/bootstrap.min.css";
+import './globals.scss'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Navbar from './_components/navbar/navbar.components'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,13 +13,31 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  children,
+  children, user, employer
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  user: React.ReactNode,
+  employer: React.ReactNode
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="container">
+          <div className="row">
+            <div className="col-12 py-3">
+              <Navbar />
+            </div>
+          </div>
+          <div className="row">
+              <div className="col-12">
+              {children}
+              {
+                employer
+              }
+              </div>
+            </div>
+        </div>      
+        </body>
     </html>
   )
 }
