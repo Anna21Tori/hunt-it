@@ -1,8 +1,13 @@
+'use client'
+import { useUser } from "@auth0/nextjs-auth0/client";
 import NavBrand from "./nav-brand.component";
 import NavButton from "./nav-button.component";
-import NavLink from "./nav-link.components";
+
 import "./styles.scss";
+
 const Navbar = () => {
+    const { user } = useUser();
+
     return(
         <div className="d-flex justify-content-between">
             <div>
@@ -11,6 +16,7 @@ const Navbar = () => {
             <div>
                 {/* <NavLink slug="/for-employers/" className="standard-offset">For Employers</NavLink> */}
                 <NavButton slug="/for-employers/" className="standard-offset">For Employers</NavButton>
+                {user ? <NavButton slug="/api/auth/logout" className="standard-offset">Log out</NavButton> : <NavButton slug="/api/auth/login" className="standard-offset">Sign in</NavButton>}
             </div>
         </div>
     )
