@@ -13,11 +13,10 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({  
-  children, user, employer
+  children, pages
 }: {
   children: React.ReactNode,
-  user: React.ReactNode,
-  employer: React.ReactNode
+  pages: React.ReactNode
 }) {
   return (
     <html lang="en">
@@ -32,9 +31,7 @@ export default function RootLayout({
             <div className="row">
                 <div className="col-12">
                 {children}
-                {
-                  employer
-                }
+                {pages}
                 </div>
               </div>
           </div>
