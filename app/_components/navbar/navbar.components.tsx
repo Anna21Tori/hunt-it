@@ -15,8 +15,8 @@ const Navbar = () => {
             </div>
             <div>
                 {/* <NavLink slug="/for-employers/" className="standard-offset">For Employers</NavLink> */}
-                <NavButton slug="/for-employers/" className="standard-offset">For Employers</NavButton>
-                {user ? <NavButton slug="/api/auth/logout" className="standard-offset">Log out</NavButton> : <NavButton slug="/api/auth/login" className="standard-offset">Sign in</NavButton>}
+                <NavButton slug="/for-employers/" >For Employers</NavButton>
+                {user ? <NavButton slug="/api/auth/logout" >Log out</NavButton> : <NavButton slug="/api/auth/login">Sign in</NavButton>}
             </div>
         </div>
     )

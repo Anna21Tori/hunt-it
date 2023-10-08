@@ -10,7 +10,7 @@ export interface NavButtonProps {
 const NavButton = (props: NavButtonProps) => {
     const {children, slug, className} = props;
     return (
-        <Button component={Link} variant="outlined" href={slug} className={className ? className : ""}>{children}</Button>
+        <Button style={{marginLeft: "10px"}} component={Link} variant="outlined" href={slug} className={className ? className : ""}>{children}</Button>
     )
 }
 export default NavButton;
