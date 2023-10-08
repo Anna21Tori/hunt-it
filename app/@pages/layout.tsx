@@ -8,10 +8,11 @@ export default function RootLayout({
   anyone: React.ReactNode,
   employer: React.ReactNode
 }) {
-    const { user } = useUser();
+    const { user , isLoading} = useUser();
   return (
     <>
-        {user ? employer : anyone}
+        {isLoading ? "Loading..." : <>{user ? employer : anyone}</>}
+        
     </>
   )
 }
